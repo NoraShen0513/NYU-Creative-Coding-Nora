@@ -1,0 +1,16 @@
+*{
+    padding:0;
+    margin: 5px;
+}
+
+section {
+    color:blue;
+    border:1px blue solid;
+    padding: 30px;
+    margin: 20px auto;
+    width: 60vw;
+}
+
+footer {
+    padding: 15px;
+}
