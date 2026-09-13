@@ -31,7 +31,7 @@ function draw(){
         textSize(32);
         fill(255);
         noStroke();
-        text('Today’s color', width/2-100, height/2);
+        text('Today’s color', width/2-120, height/2);
     }
 
 }
