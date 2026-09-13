@@ -10,7 +10,7 @@ function draw(){
     let n=25
     let m=6
 
-    x1 = random(30,width-100);
+    x1 = random(50,width-100);
     y1 = random (50,height/6);
 
     x2 = random(50,width-50);
