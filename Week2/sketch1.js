@@ -6,7 +6,6 @@ function setup(){
     background(0);
     colorMode(HSB);
     //rectColor = color(random(185, 255), random(80, 100), random(90, 100));
-    frameRate(2);
 }
 
 
