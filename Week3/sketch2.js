@@ -68,6 +68,7 @@ function draw(){
     fill(135,100,100);
     noStroke();
     textFont('Courier New', 30);
-    text('EXIT', mouseX-35, mouseY+8);
+    textAlign(CENTER, CENTER);
+    text('EXIT', mouseX, mouseY);
 
 }
