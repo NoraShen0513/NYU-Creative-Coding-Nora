@@ -17,14 +17,36 @@ function setup(){
     noFill();
 }
 
+function drawNoiseCircles(nodeX, nodeY) {
+    let circleCount = 3;
+
+    let progress = map(lerpedMouseX, 0, width, 0, 1);
+
+    for (let i = 0; i < circleCount; i++) {
+        let originalSize = 30 + i * 25;
+
+        let targetX = map(noise(i * 0.4, 0),0,1,-width / 2,width / 2);
+        let targetY = map(noise(i * 0.4, 10),0,1,-height / 2,height / 2);
+
+        let offsetX = lerp(0, targetX, progress);
+        let offsetY = lerp(0, targetY, progress);
+
+        let finalSize = width * map(noise(i * 0.4, 20),0,1,0.5,2);
+
+        let circleSize = lerp(originalSize,finalSize,progress);
+
+        ellipse(nodeX + offsetX, nodeY + offsetY, circleSize, circleSize);
+  }
+}
+
 
 function draw(){
-    color = map (lerpedMouseX, 0, width, 0,100);
-    background(color);
-
     lerpedMouseX = lerp(lerpedMouseX, mouseX, 0.05)
+    
+    backgroundcolor = map (lerpedMouseX, 0, width, 0,100);
+    background(backgroundcolor);
 
-    r = lerpedMouseX;
+    r = constrain(lerpedMouseX,0,10000);
     // r = map(lerpedMouseX, 0, width, 0, 360);
     w = map(lerpedMouseX, 0, width, 0, width / 2);
 
@@ -33,7 +55,8 @@ function draw(){
     scale(0.5);
 
     line(0,0,300,0);
-    ellipse(300,0,w,w);
+    drawNoiseCircles(300, 0, 0);
+    // ellipse(300,0,w,w);
     textFont('Courier New',100)
     text('Dream', -500, 0);
 
@@ -43,7 +66,16 @@ function draw(){
     scale(1.5);
 
     line(0,0,300,0);
-    ellipse(300,0,w,w);
+    drawNoiseCircles(300, 0);
+    // ellipse(300,0,w,w);
+
+    translate(300,0);
+    rotate(r);
+    scale(2);
+
+    line(0,0,300,0);
+    drawNoiseCircles(300, 0);
+    // ellipse(300,0,w,w);
     
 
 }
