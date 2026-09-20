@@ -50,6 +50,8 @@ function draw(){
     // r = map(lerpedMouseX, 0, width, 0, 360);
     w = map(lerpedMouseX, 0, width, 0, width / 2);
 
+    push();
+
     translate(width/2,height/2);
     rotate(r);
     scale(0.5);
@@ -57,8 +59,6 @@ function draw(){
     line(0,0,300,0);
     drawNoiseCircles(300, 0, 0);
     // ellipse(300,0,w,w);
-    textFont('Courier New',100)
-    text('Dream', -500, 0);
 
 
     translate(300,0);
@@ -76,6 +76,26 @@ function draw(){
     line(0,0,300,0);
     drawNoiseCircles(300, 0);
     // ellipse(300,0,w,w);
+
+    pop();
+
+    push();
+
+    translate(width / 2, height * 0.3);
+    rotate(-r);
+
+    let textScale = map(lerpedMouseX,0,width,0,1);
+
+    scale(textScale);
+
+    noStroke();
+    fill(255);
+    textAlign(CENTER, CENTER);
+    textFont("Courier New");
+    textSize(100);
+    text("Dream", 0, 0);
+
+    pop();
     
 
 }
