@@ -4,6 +4,7 @@ let w;
 let h;
 let lerpedMouseX;
 let lerpedMouseY;
+let backButton;
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -22,6 +23,22 @@ function setup(){
     stroke(255);
     strokeWeight(1);
     noFill();
+
+
+    backButton = createButton("← Back");
+
+    backButton.position(20, 20);
+
+    backButton.mousePressed(() => {
+        window.location.href = "Week3.html";
+    });
+
+    backButton.style("font-family", "Courier New");
+    backButton.style("font-size", "14px");
+    backButton.style("padding", "6px 10px");
+    backButton.style("background", "transparent");
+    backButton.style("color", "#c0c0c0");
+    backButton.style("border", "transparent");
 }
 
 

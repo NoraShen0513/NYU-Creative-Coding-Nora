@@ -1,17 +1,34 @@
+let backButton;
+
 let cellSize = 30;
 let words = "THE FOOL THAT DOESN'T BELONG TO THIS ERA. " +
   "THE MYSTERIOUS RULER ABOVE THE GRAY FOG. " +
   "THE KING OF YELLOW AND BLACK WHO WIELDS GOOD LUCK. ";
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, windowHeight);
 
-  textSize(18);
-  textAlign(CENTER, CENTER);
-  textFont('Courier New');
+    textSize(18);
+    textAlign(CENTER, CENTER);
+    textFont('Courier New');
 
-  fill(255);
-  noStroke();
+    fill(255);
+    noStroke();
+
+    backButton = createButton("← Back");
+
+    backButton.position(20, 25);
+
+    backButton.mousePressed(() => {
+        window.location.href = "Week3.html";
+    });
+
+    backButton.style("font-family", "Courier New");
+    backButton.style("font-size", "14px");
+    backButton.style("padding", "6px 10px");
+    backButton.style("background", "transparent");
+    backButton.style("color", "#ff0000");
+    backButton.style("border", "transparent");
 }
 
 function drawSymbol(x, y, col, row) {
