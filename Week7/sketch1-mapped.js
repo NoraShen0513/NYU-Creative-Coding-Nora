@@ -43,7 +43,7 @@ function setup() {
   pMapper.startCalibration();
 
   // After saving map.json into Week7/maps/, uncomment this to load it automatically:
-  // pMapper.load('maps/map.json');
+  pMapper.load('maps/map.json');
 
   randomSeed(32);
   for (let i = 0; i < 125; i++) {
