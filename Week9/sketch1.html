@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaze Dialogue · Week 9</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #1a1a1a;
+      color: #e8e5ff;
+      font-family: "Press Start 2P", monospace;
+    }
+
+    main {
+      width: min(1040px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 24px 0 36px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: #a99cff;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    #stage {
+      margin-top: 18px;
+    }
+
+    #stage canvas {
+      display: block;
+      width: 100% !important;
+      height: auto !important;
+      border: 3px solid #6e60b6;
+      image-rendering: pixelated;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+      color: #b4a9e2;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    button {
+      border: 3px solid #806ff6;
+      border-radius: 0;
+      padding: 16px 18px;
+      background: #33265e;
+      color: white;
+      font: inherit;
+      font-size: 10px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 #0a0714;
+    }
+
+    button:hover,
+    button:focus-visible {
+      background: #806ff6;
+      color: #111;
+    }
+
+    button:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 8px;
+      }
+
+      .controls,
+      button {
+        font-size: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <span>GAZE / DIALOGUE</span>
+      <span>WEEK 09 / INTERACTION STUDY</span>
+    </header>
+
+    <div id="stage"></div>
+
+    <div class="controls">
+      <button id="cameraButton" type="button">
+        START CAMERA + SOUND
+      </button>
+      <span id="status" role="status">
+        CLICK WORDS TO TEST WITHOUT CAMERA
+      </span>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.11/p5.min.js"></script>
+  <script src="https://unpkg.com/ml5@1.4.0/dist/ml5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+  <script src="sketch1.js"></script>
+</body>
+</html>
